@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -6,10 +7,10 @@
 
     <changeSet id="03-create-user-roles" author="Yusuf Ibrahim">
         <createTable tableName="user_roles">
-            <column name="user_id" type="BINARY(16)">
+            <column name="user_id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="role_id" type="BINARY(16)">
+            <column name="role_id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="created_by" type="VARCHAR(100)"/>

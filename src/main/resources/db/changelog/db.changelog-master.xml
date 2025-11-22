@@ -12,10 +12,5 @@
     <include file="auth/db.changelog-role.xml" relativeToChangelogFile="true"/>
     <include file="auth/db.changelog-user-role.xml" relativeToChangelogFile="true"/>
 
-    <!-- ============================== -->
-    <!--         ITEM MODULE            -->
-    <!-- ============================== -->
-    <include file="item/db.changelog-item.xml" relativeToChangelogFile="true"/>
-    <include file="item/db-create-sales-and-sale-items.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

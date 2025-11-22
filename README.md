@@ -1,118 +1,70 @@
-# 🏬 ShopWarehouse — Modern Java Spring Boot Backend for Shop & Warehouse Management
+Add a "Run with Docker" section at the top of your `README.md` to guide users on running the app using Docker Compose. Here’s the updated content:
 
-![Java](https://img.shields.io/badge/Java-17-orange?logo=openjdk)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen?logo=springboot)
-![Docker](https://img.shields.io/badge/Docker-ready-blue?logo=docker)
-![Liquibase](https://img.shields.io/badge/DB%20Migration-Liquibase-lightgrey?logo=databricks)
-![Build](https://img.shields.io/badge/Build-Maven-red?logo=apachemaven)
-![Security](https://img.shields.io/badge/Security-JWT%20Auth-green?logo=jsonwebtokens)
-![License](https://img.shields.io/badge/License-MIT-blue)
+```markdown
+# Auth Service
 
----
-## 🚀 Running the Project
+## Run with Docker
 
-You can run this project in multiple ways depending on your setup and preference.
-
----
-
-### 🐳 1. Run with Docker Compose (Recommended)
-
-This is the easiest and most consistent way to run the backend in a production-like environment.
-
-Make sure you have:
-- 🧩 [Docker](https://www.docker.com/get-started)
-- 🧩 [Docker Compose](https://docs.docker.com/compose/install/)
-
-Then simply run:
-
-```bash
 docker-compose up --build
 ```
 
----
+- The API will be available at: http://localhost:8080
+- PostgreSQL will be available at: localhost:5433
 
-## 📖 Overview
+## Build & Run (Locally)
 
-**ShopWarehouse** is a clean, secure, and scalable **Java Spring Boot backend** built for **Shop and Warehouse Management**.  
-It demonstrates production-grade design, strong separation of concerns, and modern engineering practices such as **containerization**, **API documentation**, and **test coverage**.
+```sh
+mvn clean install
+mvn spring-boot:run
+```
 
-Originally developed as a **technical assessment**, it reflects a professional standard in:
-- Backend architecture & clean code
-- Secure authentication using JWT
-- Robust validation and error handling
-- Well-structured domain-driven design
+## Default Users
 
----
+| Username    | Email                 | Password     | Roles             |
+|-------------|-----------------------|--------------|-------------------|
+| admin       | admin@example.com     | password123  | ADMIN             |
+| user1       | user1@example.com     | password123  | USER              |
+| user2       | user2@example.com     | password123  | USER              |
+| moderator   | moderator@example.com | password123  | MODERATOR         |
+| superadmin  | superadmin@example.com| password123  | ADMIN, MODERATOR  |
 
-## ✨ Features
+## API Endpoints
 
-**Authentication & Authorization**
-- JWT-based login & registration
-- Role-based access control (Admin/User)
-- BCrypt password hashing
+### Register
 
-**Item & Variant Management**
-- CRUD endpoints for items & variants
-- Linked stock tracking
-- Validation on quantity, price, and naming
+- **POST** `/api/auth/register`
+- **Request Body:**
+  ```json
+  {
+    "username": "yourUsername",
+    "email": "your@email.com",
+    "password": "yourPassword"
+  }
+  ```
+- **Response:** `201 Created` with a success message.
 
-**Sales Module**
-- Transaction-safe sale creation
-- Automatic stock deduction per variant
-- Filter sales by date, customer, or amount
+### Login
 
-**Database Migrations**
-- Liquibase XML changelogs ensure versioned schema changes
+- **POST** `/api/auth/login`
+- **Request Body:**
+  ```json
+  {
+    "usernameOrEmail": "yourUsernameOrEmail",
+    "password": "yourPassword"
+  }
+  ```
+- **Response:** `200 OK` with:
+  ```json
+  {
+    "accessToken": "jwt-token",
+    "tokenType": "Bearer"
+  }
+  ```
 
-**API Documentation**
-- Auto-generated Swagger / OpenAPI UI
+## Requirements
 
-**Containerization**
-- Ready-to-run Docker setup with MySQL + Spring Boot
-
-**Logging & Monitoring**
-- SLF4J structured logging
-- Spring Actuator endpoints for health checks
-
----
-
-## Architecture & Design Patterns
-
-This project follows **Clean Architecture** and **Layered Design**, making it highly maintainable and extensible.
-
-### Key Design Concepts
-
-- **DTO Pattern** → separates internal entities from API responses.  
-- **Service Pattern** → keeps controllers lightweight and business rules centralized.  
-- **Repository Pattern** → abstracts persistence layer using Spring Data JPA.  
-- **Exception Handling Pattern** → custom exceptions like `BadRequestException`, `ResourceNotFoundException`, with meaningful messages and HTTP status codes.  
-- **Transaction Management** → handled by `@Transactional` to ensure data consistency when performing sales or stock updates.  
-- **Dependency Injection** → powered by Spring’s IoC container for clear decoupling.  
-- **Single Responsibility Principle (SRP)** → every class has one reason to change.  
-- **Open/Closed Principle (OCP)** → the system is easy to extend (e.g., adding new modules like Purchase, Supplier, or Inventory Audit) without modifying core logic.
-
----
-
-## Additional Features & Validations
-
-### Robust Validation
-- Prevents negative or zero quantities in sales and stock.
-- Ensures prices are non-negative using `BigDecimal.compareTo()`.
-- Handles `null` safety gracefully for DTO fields.
-- Throws domain-specific exceptions with user-friendly English messages.
-
-### Transaction Safety
-- Uses `@Transactional` for atomic operations during sales creation.
-- Rolls back automatically if any stock update or validation fails.
-
-### Error Handling
-Unified global exception responses such as:
-```json
-{
-  "timestamp": "2025-11-11T07:30:00Z",
-  "status": 404,
-  "error": "Resource Not Found",
-  "message": "Variant not found with id: 123e4567..."
-}
-
-
+- Java 21
+- Maven
+- PostgreSQL
+```
+This provides clear instructions for running the app with Docker at the top of the README.

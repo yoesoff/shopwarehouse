@@ -51,6 +51,8 @@ public class SpringSecurityConfig {
                 .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**").permitAll()
                 // Allow CORS preflight
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                // Allwow access to view templates
+                .requestMatchers("/WEB-INF/views/**").permitAll()
                 // Everything else requires authentication
                 .anyRequest().authenticated()
         );

@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,14 +99,13 @@
 <body>
 <div class="container">
     <h1>YSFunHR API Documentation</h1>
-
+    <p>Hello, ${name}!</p>
     <div class="api-explorer">
         <h2>API Explorer &amp; OpenAPI Docs</h2>
-        <a href="/swagger-ui.html" target="_blank">Swagger UI</a>
-        <a href="/v3/api-docs" target="_blank">OpenAPI JSON</a>
+        <a href="${pageContext.request.contextPath}/swagger-ui.html" target="_blank">Swagger UI</a>
+        <a href="${pageContext.request.contextPath}/v3/api-docs" target="_blank">OpenAPI JSON</a>
     </div>
 
-    <!-- API groups below (unchanged) -->
     <div class="controller-group">
         <h2>AuthController <span style="color:#888;">(/api/auth)</span></h2>
         <ul>
