@@ -1,4 +1,4 @@
-# 🏬 ShopWarehouse — Modern Java Spring Boot Backend for Shop & Warehouse Management
+# 🏬 Real Estate App — Modern Java Spring Boot Backend for Shop & Warehouse Management
 
 ![Java](https://img.shields.io/badge/Java-17-orange?logo=openjdk)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen?logo=springboot)
@@ -33,7 +33,7 @@ docker-compose up --build
 
 ## 📖 Overview
 
-**ShopWarehouse** is a clean, secure, and scalable **Java Spring Boot backend** built for **Shop and Warehouse Management**.  
+**Real Estate App** is a clean, secure, and scalable **Java Spring Boot backend** built for **Shop and Warehouse Management**.  
 It demonstrates production-grade design, strong separation of concerns, and modern engineering practices such as **containerization**, **API documentation**, and **test coverage**.
 
 Originally developed as a **technical assessment**, it reflects a professional standard in:
@@ -50,16 +50,6 @@ Originally developed as a **technical assessment**, it reflects a professional s
 - JWT-based login & registration
 - Role-based access control (Admin/User)
 - BCrypt password hashing
-
-**Item & Variant Management**
-- CRUD endpoints for items & variants
-- Linked stock tracking
-- Validation on quantity, price, and naming
-
-**Sales Module**
-- Transaction-safe sale creation
-- Automatic stock deduction per variant
-- Filter sales by date, customer, or amount
 
 **Database Migrations**
 - Liquibase XML changelogs ensure versioned schema changes

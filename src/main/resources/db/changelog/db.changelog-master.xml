@@ -13,9 +13,8 @@
     <include file="auth/db.changelog-user-role.xml" relativeToChangelogFile="true"/>
 
     <!-- ============================== -->
-    <!--         ITEM MODULE            -->
+    <!--       LISTING MODULE           -->
     <!-- ============================== -->
-    <include file="item/db.changelog-item.xml" relativeToChangelogFile="true"/>
-    <include file="item/db-create-sales-and-sale-items.xml" relativeToChangelogFile="true"/>
+    <include file="listing/create-listings-table.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

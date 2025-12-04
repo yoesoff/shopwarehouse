@@ -1,4 +1,4 @@
-package com.mhyusuf.exception;
+package com.mhyusuf.config.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

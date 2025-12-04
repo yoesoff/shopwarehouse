@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>API Documentation - ShopWarehouse</title>
+    <title>API Documentation - Real Estate App</title>
     <style>
         body {
             background: #f6f8fa;
@@ -96,7 +96,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>ShopWarehouse API Documentation</h1>
+    <h1>Real Estate API Documentation</h1>
 
     <div class="api-explorer">
         <h2>API Explorer &amp; OpenAPI Docs</h2>
@@ -122,44 +122,7 @@
             <li><span class="endpoint">DELETE /users/{id}</span> <span class="method">Delete user by ID</span></li>
         </ul>
     </div>
-    <div class="controller-group">
-        <h2>ItemController <span style="color:#888;">(/api/items)</span></h2>
-        <ul>
-            <li><span class="endpoint">GET /api/items</span> <span class="method">List all items</span></li>
-            <li><span class="endpoint">GET /api/items/{id}</span> <span class="method">Get item by ID</span></li>
-            <li><span class="endpoint">POST /api/items</span> <span class="method">Create item</span></li>
-            <li><span class="endpoint">PUT /api/items/{id}</span> <span class="method">Update item</span></li>
-            <li><span class="endpoint">DELETE /api/items/{id}</span> <span class="method">Delete item</span></li>
-        </ul>
-    </div>
-    <div class="controller-group">
-        <h2>VariantController <span style="color:#888;">(/api/variants)</span></h2>
-        <ul>
-            <li><span class="endpoint">GET /api/variants</span> <span class="method">List all variants</span></li>
-            <li><span class="endpoint">GET /api/variants/{id}</span> <span class="method">Get variant by ID</span></li>
-            <li><span class="endpoint">POST /api/variants</span> <span class="method">Create variant</span></li>
-            <li><span class="endpoint">PUT /api/variants/{id}</span> <span class="method">Update variant</span></li>
-            <li><span class="endpoint">DELETE /api/variants/{id}</span> <span class="method">Delete variant</span></li>
-        </ul>
-    </div>
-    <div class="controller-group">
-        <h2>StockController <span style="color:#888;">(/api/stock)</span></h2>
-        <ul>
-            <li><span class="endpoint">GET /api/stock/{variantId}</span> <span class="method">Get stock for variant</span></li>
-            <li><span class="endpoint">PATCH /api/stock/adjust</span> <span class="method">Adjust stock</span></li>
-            <li><span class="endpoint">POST /api/stock/{variantId}/decrease?quantity=Q</span> <span class="method">Decrease stock</span></li>
-            <li><span class="endpoint">POST /api/stock/{variantId}/increase?quantity=Q</span> <span class="method">Increase stock</span></li>
-        </ul>
-    </div>
-    <div class="controller-group">
-        <h2>SalesController <span style="color:#888;">(/api/sales)</span></h2>
-        <ul>
-            <li><span class="endpoint">POST /api/sales</span> <span class="method">Create sale</span></li>
-            <li><span class="endpoint">GET /api/sales</span> <span class="method">List all sales</span></li>
-            <li><span class="endpoint">GET /api/sales/{id}</span> <span class="method">Get sale by ID</span></li>
-            <li><span class="endpoint">GET /api/sales/filter</span> <span class="method">Filter sales (by date, customer, total)</span></li>
-        </ul>
-    </div>
+
     <div class="controller-group">
         <h2>AdminController <span style="color:#888;">(/api)</span></h2>
         <ul>

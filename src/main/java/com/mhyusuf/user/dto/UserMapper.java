@@ -1,4 +1,4 @@
-package com.mhyusuf.dto;
+package com.mhyusuf.user.dto;
 
 import com.mhyusuf.auth.entity.Role;
 import com.mhyusuf.auth.entity.User;

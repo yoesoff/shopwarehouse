@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -20,7 +19,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
-
     @Override
     public User createUser(User user) {
         return userRepository.save(user);
@@ -32,12 +30,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<User> getUserById(UUID id) {
+    public Optional<User> getUserById(Integer id) {
         return userRepository.findById(id);
     }
 
     @Override
-    public void deleteUserById(UUID id) {
+    public void deleteUserById(Integer id) {
         userRepository.deleteById(id);
     }
 }

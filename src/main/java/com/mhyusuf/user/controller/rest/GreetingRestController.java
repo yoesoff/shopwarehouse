@@ -1,6 +1,6 @@
-package com.mhyusuf.controller.rest;
+package com.mhyusuf.user.controller.rest;
 
-import com.mhyusuf.entity.Greeting;
+import com.mhyusuf.user.entity.Greeting;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;

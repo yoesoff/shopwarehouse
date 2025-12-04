@@ -1,15 +1,14 @@
-package com.mhyusuf.controller.rest;
+package com.mhyusuf.user.controller.rest;
 
 import com.mhyusuf.auth.entity.User;
-import com.mhyusuf.dto.UserDto;
-import com.mhyusuf.dto.UserMapper;
-import com.mhyusuf.exception.ResourceNotFoundException;
+import com.mhyusuf.user.dto.UserDto;
+import com.mhyusuf.user.dto.UserMapper;
+import com.mhyusuf.config.exception.ResourceNotFoundException;
 import com.mhyusuf.auth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @RestController
@@ -40,14 +39,14 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public UserDto getUserById(@PathVariable UUID id) {
+    public UserDto getUserById(@PathVariable Integer id) {
         User user = userService.getUserById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id " + id));
         return UserMapper.toDto(user);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUserById(@PathVariable UUID id) {
+    public void deleteUserById(@PathVariable Integer id) {
         userService.deleteUserById(id);
     }
 }

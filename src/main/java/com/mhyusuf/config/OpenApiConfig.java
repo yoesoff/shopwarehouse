@@ -15,7 +15,7 @@ public class OpenApiConfig {
         return new OpenAPI()
                 .info(new Info()
                         .title("Shop Warehouse API")
-                        .description("REST API documentation for the Shop Warehouse system")
+                        .description("REST API documentation for the Real Estate Application")
                         .version("1.0.0")
                         .contact(new Contact()
                                 .name("Mohamad Yusuf Ibrahim")

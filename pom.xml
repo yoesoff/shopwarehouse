@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.mhyusuf</groupId>
-    <artifactId>ShopWarehouse</artifactId>
+    <artifactId>RealestateApplication</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ShopWarehouse</name>
-    <description>ShopWarehouse projects</description>
+    <name>RealestateApplication</name>
+    <description>RealestateApplication projects</description>
     <url/>
     <licenses>
         <license/>
